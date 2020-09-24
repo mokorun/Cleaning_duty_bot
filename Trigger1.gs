@@ -5,7 +5,7 @@ function Trigger1() {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     var d_a_tomorrow = new Date();
-    d_a_tomorrow.setDate(tomorrow.getDate() + 2);
+    d_a_tomorrow.setDate(d_a_tomorrow.getDate() + 2);
   
     var tomorrowHolidayFlg = isHoliday(tomorrow);
     var d_a_tomorrowHolidayFlg = isHoliday(d_a_tomorrow);
