@@ -16,16 +16,16 @@ function cln_proxy(account_id) {
     //代理ユーザー
     var proxy_usr = '';
 
+    //カウントリセット
+    cnt_reset2()
+
     for(var i = 3; i <= 11; i++){
       var who_proxy_id = spreadsheet.getRange(i, 3).getValues();
-      
+
       if(who_proxy_id == account_id.toString()){
         proxy_usr = spreadsheet.getRange(i, 1).getValues();
-        nlog('代理ユーザー:' + proxy_usr);       
+        nlog('代理ユーザー:' + proxy_usr);
         spreadsheet.getRange(i, 2).setValue(spreadsheet.getRange(i, 2).getValue() + 1);  //count +1
-        break; 
-      }else if (who_reset == spreadsheet.getRange(i, 2).getValues()) {
-        spreadsheet.getRange(i, 2).setValue(spreadsheet.getRange(i, 2).getValue() - 1);  //count -1
         break;
       }else {
         continue;

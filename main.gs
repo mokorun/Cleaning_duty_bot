@@ -12,17 +12,21 @@ function doPost(e) {
 
     var msg_proxy = body.indexOf("我來做！(gogo)", 1);
     var msg_reset = body.indexOf("今天不打掃", 1);
-    
+    var msg_retart = body.indexOf("打掃彩券 重新(gogo)", 1);
+
     if ( msg_proxy == -1 && msg_reset){
       var keyword = -1;
     }
-    
+
     if (msg_proxy !== -1){
       console.log('代理処理');
       cln_proxy(from_account);
     }else if (msg_reset !== -1){
       console.log('カウントreset処理');
       cnt_reset();
+    }else if (msg_retart !== -1){
+      console.log('再抽選');
+      restart();
     }else{
     }
  

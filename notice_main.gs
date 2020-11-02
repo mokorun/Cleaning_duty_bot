@@ -29,17 +29,17 @@ function clean_notice() {
   if(who == last_usr.toString()){
     var retBody = "[info][title]打掃bot[/title]最後是。。。。。你！\n" + who + "[/info]" + "\n※如果 不在 或 在忙，想代理他 就To給我說 「我來做！(gogo)」";
   }else{
-    var retBody = "[info][title]打掃bot[/title]今天的打掃是。。。。。你！\n" + who + "[/info]" + "\n※如果 不在 或 在忙，想代理他 就To給我說 「我來做！(gogo)」";
+    var retBody = "[info][title]打掃bot 開獎[/title]今天的打掃是。。。。。你！\n" + who + "[/info]" + "\n※如果 不在 或 在忙，想代理他 就To給我說 「我來做！(gogo)」";
   }
   sendMessage(retBody,confData.room_id);
 }
 
 function serch_min(sheet){
   //base
-  var min = sheet.getRange(3, 2).getValues();;
-  
+  var min = sheet.getRange(3, 2).getValues();
+
   for(var i = 3; i <= 11; i++){
-    
+
     var get_num = sheet.getRange(i, 2).getValues();
     if (min > get_num) {
       min = get_num;
@@ -53,7 +53,7 @@ function serch_min(sheet){
 function who_randam(sheet,cnt_min){
   var get_who_array = [];
   var who = '';
-  var last_usr = sheet.getRange(7, 1).getValues(); // 固定最後
+  var last_usr = sheet.getRange(7, 1).getValues();
 
   for(var i = 3; i <= 11; i++){
     
